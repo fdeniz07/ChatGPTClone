@@ -9,7 +9,7 @@ namespace ChatGPTClone.Domain.Entities
     {
         public string Title { get; set; }
 
-        public GptModalType Model { get; set; }
+        public GptModelType Model { get; set; }
 
         // If the type is List in the entity then it is a ValueObject
         public List<ChatThread> Threads { get; set; } = [];
