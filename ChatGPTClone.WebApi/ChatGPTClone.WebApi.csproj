@@ -18,7 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ChatGPTClone.Persistence\ChatGPTClone.Persistence.csproj" />
+    <ProjectReference Include="..\ChatGPTClone.Application\ChatGPTClone.Application.csproj" />
+    <ProjectReference Include="..\ChatGPTClone.Infrastructure\ChatGPTClone.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

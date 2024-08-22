@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatGPTClone.WasmClient", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatGPTClone.Domain", "ChatGPTClone.Domain\ChatGPTClone.Domain.csproj", "{1B12F7FB-2FF0-4C77-A930-E6141B21C174}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatGPTClone.Persistence", "ChatGPTClone.Persistence\ChatGPTClone.Persistence.csproj", "{A7715ACD-E60B-4BFA-BD34-6E31AB31AF98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatGPTClone.Application", "ChatGPTClone.Application\ChatGPTClone.Application.csproj", "{78EB08B3-08FB-4A5B-8737-8E35A58765E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatGPTClone.Infrastructure", "ChatGPTClone.Infrastructure\ChatGPTClone.Infrastructure.csproj", "{26C65E4E-9D3E-478A-97D1-FB5A9F908B39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +31,14 @@ Global
 		{1B12F7FB-2FF0-4C77-A930-E6141B21C174}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B12F7FB-2FF0-4C77-A930-E6141B21C174}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B12F7FB-2FF0-4C77-A930-E6141B21C174}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A7715ACD-E60B-4BFA-BD34-6E31AB31AF98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7715ACD-E60B-4BFA-BD34-6E31AB31AF98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7715ACD-E60B-4BFA-BD34-6E31AB31AF98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7715ACD-E60B-4BFA-BD34-6E31AB31AF98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78EB08B3-08FB-4A5B-8737-8E35A58765E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78EB08B3-08FB-4A5B-8737-8E35A58765E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78EB08B3-08FB-4A5B-8737-8E35A58765E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78EB08B3-08FB-4A5B-8737-8E35A58765E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26C65E4E-9D3E-478A-97D1-FB5A9F908B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26C65E4E-9D3E-478A-97D1-FB5A9F908B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26C65E4E-9D3E-478A-97D1-FB5A9F908B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26C65E4E-9D3E-478A-97D1-FB5A9F908B39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

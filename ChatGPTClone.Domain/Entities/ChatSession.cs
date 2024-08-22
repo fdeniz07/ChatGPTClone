@@ -1,6 +1,5 @@
 ﻿using ChatGPTClone.Domain.Common;
 using ChatGPTClone.Domain.Enums;
-using ChatGPTClone.Domain.Identity;
 using ChatGPTClone.Domain.ValueObjects;
 
 namespace ChatGPTClone.Domain.Entities
@@ -18,6 +17,6 @@ namespace ChatGPTClone.Domain.Entities
         // public ICollection<ChatMessage> ChatMessages { get; set; }
 
         public Guid AppUserId { get; set; }
-        public AppUser AppUser { get; set; }
+        //public AppUser AppUser { get; set; }
     }
 }

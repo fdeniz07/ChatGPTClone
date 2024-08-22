@@ -1,7 +1,6 @@
-﻿
-namespace ChatGPTClone.WebApi.Controllers;
+﻿namespace ChatGPTClone.WebApi.Controllers;
 
-using ChatGPTClone.Persistence.Contexts;
+using ChatGPTClone.Infrastructure.Persistence.Contexts;
 using ChatGPTClone.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
