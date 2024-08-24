@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ChatGPTClone.Application.Features.ChatSessions.Commands
 {
-    public class ChatSessionService
+    public sealed class ChatSessionService
     {
         private readonly IApplicationDbContext _applicationDbContext;
 
