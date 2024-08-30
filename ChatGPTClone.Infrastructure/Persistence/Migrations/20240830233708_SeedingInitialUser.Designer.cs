@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ChatGPTClone.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240830230209_SeedingInitialUser")]
+    [Migration("20240830233708_SeedingInitialUser")]
     partial class SeedingInitialUser
     {
         /// <inheritdoc />
@@ -161,6 +161,28 @@ namespace ChatGPTClone.Infrastructure.Persistence.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("Users", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("2798212b-3e5d-4556-8629-a64eb70da4a8"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "ebb265f9-13dd-487b-928b-2229071c5624",
+                            CreatedByUserId = "2798212b-3e5d-4556-8629-a64eb70da4a8",
+                            CreatedOn = new DateTimeOffset(new DateTime(2024, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)),
+                            Email = "fatih@gmail.com",
+                            EmailConfirmed = true,
+                            FirstName = "Fatih",
+                            LastName = "Deniz",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "FATIH@GMAIL.COM",
+                            NormalizedUserName = "FATIH",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBmz3df7lfROry+TruBJXSyGRlTM8kpXKrvFQ9WdZqjVOIK/bPFYS9hiewpi9jOzLw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "0bea9d23-7d18-44cc-b622-596267c33b16",
+                            TwoFactorEnabled = false,
+                            UserName = "fatih"
+                        });
                 });
 
             modelBuilder.Entity("ChatGPTClone.Infrastructure.Identity.AppUserClaim", b =>
