@@ -1,8 +1,9 @@
-﻿using System.Reflection;
-using ChatGPTClone.Application.Common.Behaviours;
+﻿using ChatGPTClone.Application.Common.Behaviours;
+using ChatGPTClone.Application.Common.Interfaces;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace ChatGPTClone.Application
 {
@@ -16,8 +17,9 @@ namespace ChatGPTClone.Application
             {
                 config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
 
-                //Validation Pipeline
+                // Validation PipeLine
                 config.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>)); // <,> : Generic Type/Placeholder
+
             });
 
             return services;

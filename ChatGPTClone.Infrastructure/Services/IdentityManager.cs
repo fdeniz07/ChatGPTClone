@@ -26,6 +26,16 @@ namespace ChatGPTClone.Infrastructure.Services
             return await _userManager.CheckPasswordAsync(user, request.Password);
         }
 
+        public Task<bool> CheckEmailExistsAsync(string email, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> CheckIfEmailVerifiedAsync(string email, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IdentityLoginResponse> LoginAsync(IdentityLoginRequest request, CancellationToken cancellationToken)
         {
             var user = await _userManager.FindByEmailAsync(request.Email);

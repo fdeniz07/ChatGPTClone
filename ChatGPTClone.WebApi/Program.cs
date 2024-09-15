@@ -33,7 +33,7 @@ try
 
     builder.Services.AddApplication();
     builder.Services.AddInfrastructure(builder.Configuration);
-    builder.Services.AddWebApi(builder.Configuration);
+    builder.Services.AddWebApi(builder.Configuration, builder.Environment);
 
 
     var app = builder.Build();
@@ -45,7 +45,10 @@ try
         app.UseSwaggerUI();
     }
 
-    var requestLocalizationOptions = app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value;
+    var requestLocalizationOptions = app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value; //GetRequiredService; getirilmeye calisilan sinifi bulamazsa exception firlatir.
+
+  //  var requestLocalizationOptions2 = app.Services.GetService<IOptions<RequestLocalizationOptions>>().Value; //GetService; getirilmeye calisilan sinifi bulamazsa geriye null döndürür.
+
 
     app.UseRequestLocalization(requestLocalizationOptions);
 
@@ -67,4 +70,9 @@ catch (Exception ex)
 finally
 {
     Log.CloseAndFlush();
+}
+
+Func<IServiceProvider, object> EnvironmentManager(string webRootPath)
+{
+    throw new NotImplementedException();
 }

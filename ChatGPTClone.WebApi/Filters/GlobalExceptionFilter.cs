@@ -1,6 +1,6 @@
-﻿using ChatGPTClone.Application.Common.Models.Errors;
+﻿using ChatGPTClone.Application.Common.Localization;
+using ChatGPTClone.Application.Common.Models.Errors;
 using ChatGPTClone.Application.Common.Models.General;
-using ChatGPTClone.Application.Localization;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;

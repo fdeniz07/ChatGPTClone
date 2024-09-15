@@ -118,12 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="GeneralInternalServerException" xml:space="preserve">
-    <value>Internal server error.</value>
+    <value>An expected internal server errors occured.</value>
   </data>
   <data name="GeneralNotFoundException" xml:space="preserve">
     <value />
   </data>
   <data name="GeneralValidationException" xml:space="preserve">
     <value>One or more validation errors occurred.</value>
+  </data>
+  <data name="ValidationIsRequired" xml:space="preserve">
+    <value>{0} is required.</value>
+  </data>
+  <data name="ValidationIsInvalid" xml:space="preserve">
+    <value>{0} is invalid.</value>
   </data>
 </root>

@@ -7,7 +7,7 @@ namespace ChatGPTClone.WebApi
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddWebApi(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddWebApi(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
         {
             services.AddHttpContextAccessor();
 
@@ -27,7 +27,7 @@ namespace ChatGPTClone.WebApi
                 {
                     defaultCulture,
                     new CultureInfo("en-GB"),
-                    new CultureInfo("de")
+                    new CultureInfo("de-DE")
                 };
 
                 // Add supported cultures
@@ -37,7 +37,7 @@ namespace ChatGPTClone.WebApi
 
                 options.SupportedUICultures = supportedCultures;
 
-                options.ApplyCurrentCultureToResponseHeaders = true; // Dönen mesaji header'da da göster
+                options.ApplyCurrentCultureToResponseHeaders = true; // Dönen mesaji header'da da göster. Frontend tarafinda insanlarin hangi dil ile etkilesime gectigini ögrenebilirsiniz.
             });
 
             return services;

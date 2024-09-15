@@ -2,16 +2,20 @@
 using ChatGPTClone.Application.Features.ChatSessions.Queries.GetAll;
 using ChatGPTClone.Application.Features.ChatSessions.Queries.GetById;
 using MediatR;
+using ChatGPTClone.WebApi.Filters;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
+
+
 
 namespace ChatGPTClone.WebApi.Controllers;
-using Microsoft.AspNetCore.Mvc;
-
-
 public class ChatSessionsController : ApiControllerBase
 {
 
-    public ChatSessionsController(ISender mediatr) : base(mediatr)
+    private readonly IStringLocalizer<GlobalExceptionFilter> _localizer;
+    public ChatSessionsController(ISender mediatr, IStringLocalizer<GlobalExceptionFilter> localizer) : base(mediatr)
     {
+        _localizer = localizer;
     }
 
     [HttpGet]

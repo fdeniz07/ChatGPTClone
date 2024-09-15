@@ -1,5 +1,4 @@
 ﻿using ChatGPTClone.Application.Common.Interfaces;
-using ChatGPTClone.Application.Common.Models.Identity;
 using FluentValidation;
 
 namespace ChatGPTClone.Application.Features.Auth.Commands.Login
@@ -7,14 +6,10 @@ namespace ChatGPTClone.Application.Features.Auth.Commands.Login
     public class AuthLoginCommandValidator : AbstractValidator<AuthLoginCommand>
     {
         private readonly IIdentityService _identityService;
-
         public AuthLoginCommandValidator(IIdentityService identityService)
         {
             _identityService = identityService;
-        }
 
-        public AuthLoginCommandValidator()
-        {
             RuleFor(x => x.Email)
                 .NotEmpty()
                 .WithMessage("Email is required")
@@ -28,16 +23,15 @@ namespace ChatGPTClone.Application.Features.Auth.Commands.Login
                 .WithMessage("Password must be between 6 and 50 characters");
 
             RuleFor(x => x)
-                .MustAsync(BeValidUser)
+                .MustAsync(BeValidUserAsync)
                 .WithMessage("Invalid email or password");
         }
 
-        private Task<bool> BeValidUser(AuthLoginCommand model, CancellationToken cancellationToken)
+        private Task<bool> BeValidUserAsync(AuthLoginCommand model, CancellationToken cancellationToken)
         {
-            var request = new IdentityAuthenticateRequest(model.Email, model.Password);
+            var request = model.ToIdentityAuthenticateRequest();
 
             return _identityService.AuthenticateAsync(request, cancellationToken);
         }
-
     }
 }

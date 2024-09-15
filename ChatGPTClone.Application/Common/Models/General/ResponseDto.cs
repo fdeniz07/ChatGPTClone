@@ -4,13 +4,6 @@ namespace ChatGPTClone.Application.Common.Models.General
 {
     public class ResponseDto<T>
     {
-        //"Response": {
-        //    "Message": "The chat session was created successfully.",
-        //    "Data": {},
-        //    "Success": true,
-        //    "Errors": []
-        //}
-
         public string Message { get; set; } = string.Empty;
         public T Data { get; set; }
         public bool Success { get; set; } = true;
@@ -46,8 +39,6 @@ namespace ChatGPTClone.Application.Common.Models.General
             Success = false;
         }
 
-        // new ResponseDto(chatSession,"ChatSession was created successfully.");
-
         public ResponseDto(T data, string message, bool success, List<ErrorDto> errors) : this(data, message, errors)
         {
             Success = success;
@@ -55,3 +46,10 @@ namespace ChatGPTClone.Application.Common.Models.General
         }
     }
 }
+
+//"Response": {
+//    "Message": "The chat session was created successfully.",
+//    "Data": {},
+//    "Success": true,
+//    "Errors": []
+//}

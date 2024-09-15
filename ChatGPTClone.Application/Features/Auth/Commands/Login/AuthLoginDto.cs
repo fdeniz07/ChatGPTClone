@@ -5,12 +5,12 @@ namespace ChatGPTClone.Application.Features.Auth.Commands.Login
     public class AuthLoginDto
     {
         public string Token { get; set; }
-
         public DateTime ExpiresAt { get; set; }
 
         public AuthLoginDto(string token, DateTime expiresAt)
         {
             Token = token;
+
             ExpiresAt = expiresAt;
         }
 
@@ -18,6 +18,5 @@ namespace ChatGPTClone.Application.Features.Auth.Commands.Login
         {
             return new AuthLoginDto(response.Token, response.ExpiresAt);
         }
-
     }
 }
