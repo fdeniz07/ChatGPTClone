@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Resend;
 
 namespace ChatGPTClone.Infrastructure
 {
@@ -41,11 +42,13 @@ namespace ChatGPTClone.Infrastructure
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
-
-
+            // Resend
+            services.AddOptions();
+            services.AddHttpClient<ResendClient>();
+            services.Configure<ResendClientOptions>(options => options.ApiToken = configuration.GetSection("ResendApiKey").Value!); //Sondaki ünlem uyarilari keser ve null gelmeyecegini belirtir.
 
             // JWT ayarlarını yapılandırır
-            ConfigureJwtSettings(services, configuration);
+            //ConfigureJwtSettings(services, configuration);
 
             return services;
         }

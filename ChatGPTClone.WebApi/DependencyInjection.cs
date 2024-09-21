@@ -13,6 +13,8 @@ namespace ChatGPTClone.WebApi
 
             services.AddScoped<ICurrentUserService, CurrentUserManager>();
 
+            services.AddSingleton<IEnvironmentService>(new EnvironmentManager(environment.WebRootPath));
+
             // Localization
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 
