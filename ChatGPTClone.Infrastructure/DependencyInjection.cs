@@ -26,7 +26,14 @@ namespace ChatGPTClone.Infrastructure
             // IApplicationDbContext'i ApplicationDbContext ile eşler
             services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 
+            // JWT ayarlarını yapılandırır
+            ConfigureJwtSettings(services, configuration);
+
+            services.AddScoped<IJwtService, JwtManager>();
+
             services.AddScoped<IIdentityService, IdentityManager>();
+
+            services.AddScoped<IEmailService, ResendEmailManager>();
 
             services.AddIdentity<AppUser, Role>(options =>
             {
@@ -46,9 +53,8 @@ namespace ChatGPTClone.Infrastructure
             services.AddOptions();
             services.AddHttpClient<ResendClient>();
             services.Configure<ResendClientOptions>(options => options.ApiToken = configuration.GetSection("ResendApiKey").Value!); //Sondaki ünlem uyarilari keser ve null gelmeyecegini belirtir.
-
-            // JWT ayarlarını yapılandırır
-            //ConfigureJwtSettings(services, configuration);
+            services.AddTransient<IResend, ResendClient>();
+           
 
             return services;
         }
