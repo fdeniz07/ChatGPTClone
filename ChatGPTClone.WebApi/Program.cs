@@ -18,6 +18,8 @@ try
 
     var builder = WebApplication.CreateBuilder(args);
 
+    builder.Services.AddSerilog();
+
     // Add services to the container.
 
     // Controller'ları servis olarak ekle
@@ -26,17 +28,21 @@ try
         // Global exception filtresini ekle
         opt.Filters.Add<GlobalExceptionFilter>();
     });
+
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
+
     builder.Services.AddSwaggerGen();
 
-
     builder.Services.AddApplication();
+
     builder.Services.AddInfrastructure(builder.Configuration);
+
     builder.Services.AddWebApi(builder.Configuration, builder.Environment);
 
-
     var app = builder.Build();
+
+    app.UseCors("AllowAll");
 
     // Configure the HTTP request pipeline.
     if (app.Environment.IsDevelopment())
@@ -45,10 +51,10 @@ try
         app.UseSwaggerUI();
     }
 
-    var requestLocalizationOptions = app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value; //GetRequiredService; getirilmeye calisilan sinifi bulamazsa exception firlatir.
+    var requestLocalizationOptions = app.Services
+        .GetRequiredService<IOptions<RequestLocalizationOptions>>().Value; //GetRequiredService; getirilmeye calisilan sinifi bulamazsa exception firlatir.
 
   //  var requestLocalizationOptions2 = app.Services.GetService<IOptions<RequestLocalizationOptions>>().Value; //GetService; getirilmeye calisilan sinifi bulamazsa geriye null döndürür.
-
 
     app.UseRequestLocalization(requestLocalizationOptions);
 

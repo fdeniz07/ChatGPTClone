@@ -8,25 +8,21 @@ namespace ChatGPTClone.Application.Features.ChatSessions.Queries.GetById
     {
         public Guid Id { get; set; }
         public string Title { get; set; }
-
         public GptModelType Model { get; set; }
-
         public List<ChatThread> Threads { get; set; } = [];
-
         public Guid AppUserId { get; set; }
-
         public DateTimeOffset CreatedOn { get; set; }
 
-        public static ChatSessionGetByIdDto MapFromChatSession(ChatSession chatSessions)
+        public static ChatSessionGetByIdDto MapFromChatSession(ChatSession chatSession)
         {
-            return new ChatSessionGetByIdDto
+            return new ChatSessionGetByIdDto()
             {
-                Id = chatSessions.Id,
-                Title = chatSessions.Title,
-                Model = chatSessions.Model,
-                Threads = chatSessions.Threads,
-                AppUserId = chatSessions.AppUserId,
-                CreatedOn = chatSessions.CreatedOn
+                Id = chatSession.Id,
+                Title = chatSession.Title,
+                Model = chatSession.Model,
+                Threads = chatSession.Threads,
+                AppUserId = chatSession.AppUserId,
+                CreatedOn = chatSession.CreatedOn
             };
         }
     }

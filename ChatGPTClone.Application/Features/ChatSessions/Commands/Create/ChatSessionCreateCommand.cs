@@ -6,7 +6,7 @@ using MediatR;
 
 namespace ChatGPTClone.Application.Features.ChatSessions.Commands.Create
 {
-    public sealed class ChatSessionCreateCommand : IRequest<ResponseDto<Guid>>
+    public class ChatSessionCreateCommand:IRequest<ResponseDto<Guid>>
     {
         public GptModelType Model { get; set; }
         public string Content { get; set; }
@@ -15,7 +15,7 @@ namespace ChatGPTClone.Application.Features.ChatSessions.Commands.Create
         {
             return new ChatSession()
             {
-                Id = Ulid.NewUlid().ToGuid(), // IIdService.NewId(), Guid.V7.NewGuid(), or any other ID generation method
+                Id = Ulid.NewUlid().ToGuid(), // DateTime.UtcNow DateTime.Now IIDService.NewId(), Guid.V7.NEWGuid
                 Model = Model,
                 AppUserId = userId,
                 CreatedOn = DateTimeOffset.UtcNow,
@@ -46,9 +46,9 @@ namespace ChatGPTClone.Application.Features.ChatSessions.Commands.Create
                                 CreatedOn = DateTimeOffset.UtcNow
                             }
                         ]
-                    }
+                    },
                 ]
             };
-        }
+        } 
     }
 }

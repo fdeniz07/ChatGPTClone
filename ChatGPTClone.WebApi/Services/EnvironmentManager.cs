@@ -1,9 +1,8 @@
 ﻿using ChatGPTClone.Application.Common.Interfaces;
 
-namespace ChatGPTClone.WebApi.Services
-{
-    public class EnvironmentManager : IEnvironmentService
+namespace ChatGPTClone.WebApi.Services;
 
+    public class EnvironmentManager : IEnvironmentService
     {
         public string WebRootPath { get; }
 
@@ -12,4 +11,3 @@ namespace ChatGPTClone.WebApi.Services
             WebRootPath = webRootPath;
         }
     }
-}

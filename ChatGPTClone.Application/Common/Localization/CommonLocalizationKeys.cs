@@ -8,7 +8,7 @@
 
         public static string GeneralInternalServerException => nameof(GeneralInternalServerException);
 
-        public static string ValidationIsRequiered => nameof(ValidationIsRequiered);
+        public static string ValidationIsRequired => nameof(ValidationIsRequired);
 
         public static string ValidationIsInvalid => nameof(ValidationIsInvalid);
 

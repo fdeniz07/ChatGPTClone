@@ -1,4 +1,4 @@
-﻿using ChatGPTClone.Domain.Entities;
+using ChatGPTClone.Domain.Entities;
 using ChatGPTClone.Domain.Enums;
 
 namespace ChatGPTClone.Application.Features.ChatSessions.Queries.GetAll;
