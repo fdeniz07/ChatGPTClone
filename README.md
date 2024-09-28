@@ -19,3 +19,4 @@
 ## CHATGPT INTEGTATION
 ## AUTOMAPPER
 
+![image](https://github.com/user-attachments/assets/9b6a0c0b-9782-4b79-bcf6-c0f9bbeeb295)
